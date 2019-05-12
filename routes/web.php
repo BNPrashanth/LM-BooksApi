@@ -11,6 +11,11 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$router->group(['prefix' => 'books-api/v1'], function ($router) {
+    $router->get('/all', 'BookController@index');
+    $router->post('/add', 'BookController@store');
+    $router->get('/get/{book}', 'BookController@show');
+    $router->put('/update/{book}', 'BookController@update');
+    $router->patch('/update/{book}', 'BookController@update');
+    $router->delete('/delete/{book}', 'BookController@destroy');
 });
