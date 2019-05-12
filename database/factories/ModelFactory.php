@@ -15,7 +15,7 @@ $factory->define(App\Book::class, function (Faker\Generator $faker) {
     return [
         'title' => $faker->sentence(3, true),
         'description' => $faker->sentence(6, true),
-        'price' => $faker->randomNumberBetween(25, 150),
-        'author_id' => $faker->randomNumberBetween(1, 50),
+        'price' => $faker->numberBetween(25, 150),
+        'author_id' => $faker->numberBetween(1, 50),
     ];
 });
